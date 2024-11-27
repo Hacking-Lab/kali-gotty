@@ -1,8 +1,8 @@
 FROM kalilinux/kali-rolling
 
-LABEL MAINTAINER "Ivan Buetler <ivan.buetler@compass-security.com>"
+LABEL MAINTAINER "Ivan Buetler <ivan.buetler@hacking-lab.com>"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get dist-upgrade -yq && \
     apt-get install -y amass bash python2  python3 bind9-dnsutils coreutils curl exploitdb findutils gobuster hashid \
         john proxychains jq ftp ldnsutils ngrep nmap metasploit-framework openssh-client openssl \
@@ -18,7 +18,7 @@ ADD root/ /
 
 RUN  sed -e "s/DATE/$(date)/g" -i /etc/motd
 
-ENV TERM xterm
+ENV TERM=xterm
 
 EXPOSE 8080
 ENTRYPOINT ["/entrypoint.sh"]

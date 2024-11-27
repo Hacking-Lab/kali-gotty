@@ -1,11 +1,10 @@
-version: '3.6'
 
 services:
-  alpine-base:
+  kali-gotty:
     build: .
-    image: hackinglab/alpine-base:3.2
+    image: hackinglab/kali-gotty:3.2
     environment:
       - HL_USER_USERNAME=hacker
       - HL_USER_PASSWORD=compass
-      - HL_ROOT_PASSWORD=<change-me>
+      - HL_ROOT_PASSWORD=compass
 
