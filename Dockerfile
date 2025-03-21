@@ -1,6 +1,5 @@
 FROM kalilinux/kali-rolling
-
-LABEL MAINTAINER "Ivan Buetler <ivan.buetler@hacking-lab.com>"
+LABEL maintainer="Ivan Buetler <ivan.buetler@hacking-lab.com>"
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get dist-upgrade -yq && \
